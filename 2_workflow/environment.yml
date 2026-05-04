@@ -1,0 +1,15 @@
+name: gse222820_rnaseq
+channels:
+    - conda-forge
+    - bioconda
+    - defaults
+dependencies:
+    - sra-tools=3.0.5
+    - fastqc=0.12.1
+    - hisat2=2.2.1
+    - samtools=1.18
+    - subread=2.0.6
+    - r-base=4.3.1
+    - bioconductor-limma=3.56.2
+    - bioconductor-edger=3.42.4
+    - bioconductor-biomart=2.56.1
