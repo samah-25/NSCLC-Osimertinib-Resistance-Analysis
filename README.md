@@ -3,7 +3,15 @@
 
 Complete RNA-seq pipeline from raw FASTQ to biological interpretation of Osimertinib resistance in PC9 lung cancer cells.
 
-> **Key Finding:** Transcriptomic profiling of Osimertinib-resistant PC9 cells reveals a dual escape strategy: (1) Immune evasion via systematic shutdown of immune genes IL7 and HLA-A, and (2) Squamous transdifferentiation via strong KRT17 upregulation (log2FC = 3.93). Together, these suggest the cells remodel their identity to evade both therapy and immune detection.
+> **Key Finding:** 
+Analysis of GSE222820 identified **279 high-confidence differentially expressed genes** `(|log2FC| ≥ 3, adj.P < 0.05)` supporting a dual-axis model of resistance:
+
+1.  **Lineage Plasticity:** Coordinated loss of lung adenocarcinoma identity markers `WNT5A` (-9.12 log2FC) with concurrent gain of squamous differentiation markers `KRT17` (+3.93), consistent with adenocarcinoma-to-squamous transdifferentiation.
+
+2.  **Immune Microenvironment Reprogramming:** Establishment of a pro-inflammatory state via `THBD` (+5.78) and `CASP1` (+4.60) upregulation, combined with loss of T-cell homeostatic signals `IL7` (-3.67). This is accompanied by a paradoxical increase in MHC-I components `HLA-A` (+3.49).
+
+3.  **Clinical Correlation:** Downregulation of the "Dilated Cardiomyopathy" pathway, providing a transcriptomic signature that aligns with the known cardiac adverse events associated with Osimertinib.
+This model independently validates the KRT-driven immune dysfunction mechanism reported by Shi et al. 2025 [[PMID: 40796706](https://pubmed.ncbi.nlm.nih.gov/40796706/)] and extends it by linking resistance to a cardiotoxicity signature.
 
 ## Project Overview
 This project investigates how Osimertinib affects gene expression in NSCLC using the PC9 cell line.
@@ -55,7 +63,9 @@ supporting a dual-escape model of resistance.
 | **3. Clinical Correlation** <br> *Cardiotoxicity Signature* | `Dilated Cardiomyopathy` Pathway | **↓ Down** | Transcriptomic signature aligns with known cardiac adverse events of Osimertinib. |
 
 ## Independent Validation of Published Mechanisms
-This study independently reproduces the core findings of Shi et al. 2025 [*Discov Oncol*, PMID: 40796706], confirming the role of KRT-family genes and T-cell suppression in osimertinib resistance. The analysis further extends these findings by identifying a transcriptomic signature consistent with cardiotoxicity.
+
+This study independently reproduces the core findings of **Shi et al. 2025** [*Discov Oncol*, PMID: 40796706](https://pubmed.ncbi.nlm.nih.gov/40796706/), confirming the role of KRT-family genes and T-cell suppression in osimertinib resistance. 
+The analysis further extends these findings by identifying a transcriptomic signature consistent with cardiotoxicity, providing a potential mechanistic link between the resistance phenotype and clinical adverse events.
 
 **Conclusion:** This work independently validates the KRT-driven immune dysfunction model of osimertinib resistance and provides a potential mechanistic link to its clinical cardiotoxicity profile.
 
