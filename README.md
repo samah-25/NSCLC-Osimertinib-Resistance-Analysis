@@ -36,3 +36,31 @@ The full reproducible workflow is available in `2_workflow/galaxy-workflow.ga`. 
 4. **Quantification**: Generated gene-level count matrix from aligned reads using featureCounts
 5. **Differential Expression**: Identified significantly dysregulated genes between conditions using limma-voom
 6. **Pathway Analysis**: Performed GO and KEGG pathway enrichment on significant genes using Enrichr to interpret biological meaning
+
+## Key Results Summary
+
+### 1. Differential Expression Summary
+Using stringent filters (|logFC| ≥ 3, adj.P < 0.05), we identified **279 high-confidence DEGs**:
+- **221 Up-regulated genes** in resistant PC9-OR cells
+- **58 Down-regulated genes** in resistant PC9-OR cells
+
+### 2. Top Driver Genes
+**Most Down-regulated:** WNT5A (-9.12), ALDH1A1 (-7.79), IL7 (-3.67)  
+**Most Up-regulated:** THBD (+5.78), S100A7 (+4.63), KRT17 (+3.93), HLA-A (+3.49)
+
+### 3. Biological Interpretation: Dual-Escape Model
+**Mechanism 1: Lineage Plasticity**  
+Loss of lung markers `WNT5A`, `MIR200B` and gain of squamous markers `KRT17`, `S100A7` indicates a switch to a drug-insensitive state. Supported by GO term "Cornified Envelope Formation" (P=0.003).
+
+**Mechanism 2: Inflammatory Reprogramming**  
+Upregulation of `THBD`, `CASP1`, `HLA-A/B` with loss of T-cell cytokines `IL7`, `IL4` suggests a pro-inflammatory niche that impairs immune clearance. Supported by KEGG term "Antigen Processing and Presentation" (Combined Score=93.86).
+
+**Conclusion:** Resistance is driven by combined loss of epithelial identity and gain of an inflammatory, squamous-like state. This model matches findings from Shi et al. 2025 [PMID: 40796706].
+
+## Data Availability
+
+- **Raw RNA-seq Data:** NCBI Gene Expression Omnibus (GEO) under accession number [GSE222820](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE222820)
+- **Processed Data:** All intermediate and final processed files (counts, DEG lists, enrichment results) are available in the `1_data/` and `results/tables/` directories of this repository.
+- **Analysis Workflow:** The complete Galaxy workflow is available in `2_workflow/galaxy-workflow.ga`.
+
+  
