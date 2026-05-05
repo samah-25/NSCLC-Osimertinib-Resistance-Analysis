@@ -8,15 +8,15 @@ Analysis of GSE222820 identified **279 high-confidence differentially expressed 
 
 1.  **Lineage Plasticity:** Coordinated loss of lung adenocarcinoma identity markers `WNT5A` (-9.12 log2FC) with concurrent gain of squamous differentiation markers `KRT17` (+3.93), consistent with adenocarcinoma-to-squamous transdifferentiation.
 
-2.  **Immune Microenvironment Reprogramming:** Establishment of a pro-inflammatory state via `THBD` (+5.78) and `CASP1` (+4.60) upregulation, combined with loss of T-cell homeostatic signals `IL7` (-3.67). This is accompanied by a paradoxical increase in MHC-I components `HLA-A` (+3.49).
+2.  **Immune Microenvironment Reprogramming:** Establishment of a pro-inflammatory state via `THBD` (+5.78) and `CASP1` (+4.60) upregulation, combined with loss of T-cell homeostatic signals `IL7` (-3.67). This is accompanied by a paradoxical upregulation of MHC-I components such as HLA-A (+3.49), suggesting altered antigen presentation despite T-cell suppression.
 
-3.  **Clinical Correlation:** Downregulation of the "Dilated Cardiomyopathy" pathway, providing a transcriptomic signature that aligns with the known cardiac adverse events associated with Osimertinib.
+3.  **Potential Clinical Relevance:** Downregulation of the "Dilated Cardiomyopathy" pathway, providing a transcriptomic signature that aligns with the known cardiac adverse events associated with Osimertinib.
 This model independently validates the KRT-driven immune dysfunction mechanism reported by Shi et al. 2025 [[PMID: 40796706](https://pubmed.ncbi.nlm.nih.gov/40796706/)] and extends it by linking resistance to a cardiotoxicity signature.
 
 ## Project Overview
 This project investigates how Osimertinib affects gene expression in NSCLC using the PC9 cell line.
 I performed Differential Gene Expression Analysis on the GSE222820 dataset using a Galaxy-based RNA-seq pipeline. The aim was to identify which genes and biological pathways are activated or suppressed in response to the drug.
-The results show a systematic shutdown of immune and growth-related pathways, marked by downregulation of IL7 and HLA-A, alongside strong activation of structural pathways driven by KRT17. This suggests the drug induces major transcriptomic remodeling in resistant cells.
+The results show a systematic shutdown of immune and growth-related pathways, marked by downregulation of IL7 alongside significant upregulation of HLA-A, alongside strong activation of structural pathways driven by KRT17. This suggests the drug induces major transcriptomic remodeling in resistant cells.
 
 This repository contains the full workflow from raw FASTQ to pathway-level insights, built for transparency and reproducibility.
 
@@ -25,11 +25,11 @@ This repository contains the full workflow from raw FASTQ to pathway-level insig
 📁 NSCLC-Osimertinib-Resistance-Analysis/
 ├── 📁 1_data/
 │   ├── counts_matrix.csv          # Raw gene counts from featureCounts
-│   ├── DGE_results_limma.csv      # Full differential expression table
 │   └── metadata.csv               # Sample info: control vs resistant
 ├── 📁 2_workflow/
 │   └── galaxy-workflow.ga         # Import this to Galaxy to reproduce
 ├── 📁 3_results/
+|.  ├── DGE_results_limma_voom.csv
 │   ├── volcano_plot.png           # Main DGE visualization
 │   ├── pathway_enrichment.png     # g:Profiler results
 │   └── KRT17_boxplot.png          # Expression of key gene
@@ -61,10 +61,10 @@ supporting a dual-escape model of resistance.
 | | `HLA-A` | **+3.49** | Paradoxical MHC-I upregulation. KEGG: "Antigen Processing and Presentation" (Score=93.86). |
 | | `THBD` | **+5.78** | Top upregulated gene. Induces pro-inflammatory, pro-coagulant tumor microenvironment. |
 | **3. Clinical Correlation** <br> *Cardiotoxicity Signature* | `Dilated Cardiomyopathy` Pathway | **↓ Down** | Transcriptomic signature aligns with known cardiac adverse events of Osimertinib. |
-
+The full differential expression results are available in 3_results/DGE_results_limma.csv.
 ## Independent Validation of Published Mechanisms
 
-This study independently reproduces the core findings of **Shi et al. 2025** [*Discov Oncol*, PMID: 40796706](https://pubmed.ncbi.nlm.nih.gov/40796706/), confirming the role of KRT-family genes and T-cell suppression in osimertinib resistance. 
+This work supports the KRT-driven immune dysfunction model of osimertinib resistance of **Shi et al. 2025** [*Discov Oncol*, PMID: 40796706](https://pubmed.ncbi.nlm.nih.gov/40796706/), confirming the role of KRT-family genes and T-cell suppression in osimertinib resistance. 
 The analysis further extends these findings by identifying a transcriptomic signature consistent with cardiotoxicity, providing a potential mechanistic link between the resistance phenotype and clinical adverse events.
 
 **Conclusion:** This work independently validates the KRT-driven immune dysfunction model of osimertinib resistance and provides a potential mechanistic link to its clinical cardiotoxicity profile.
