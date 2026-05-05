@@ -1,0 +1,7 @@
+sample,condition,accession
+control_1,PC9_Sensitive,SRR23073485
+control_2,PC9_Sensitive,SRR23073486
+control_3,PC9_Sensitive,SRR23073487
+treated_1,PC9_OR,SRR23073488
+treated_2,PC9_OR,SRR23073489
+treated_3,PC9_OR,SRR23073490
