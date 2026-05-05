@@ -29,7 +29,7 @@ This repository contains the full workflow from raw FASTQ to pathway-level insig
 ├── 📁 2_workflow/
 │   └── galaxy-workflow.ga         # Import this to Galaxy to reproduce
 ├── 📁 3_results/
-|.  ├── DGE_results_limma_voom.csv
+|   ├── DGE_results_limma_voom.csv
 │   ├── volcano_plot.png           # Main DGE visualization
 │   ├── pathway_enrichment.png     # g:Profiler results
 │   └── KRT17_boxplot.png          # Expression of key gene
@@ -60,20 +60,22 @@ supporting a dual-escape model of resistance.
 | **2. Immune Reprogramming** <br> *T-cell Dysfunction* | `IL7` | **-3.67** | Loss of critical T-cell survival cytokine, consistent with reduced CD8+ T-cell activity. |
 | | `HLA-A` | **+3.49** | Paradoxical MHC-I upregulation. KEGG: "Antigen Processing and Presentation" (Score=93.86). |
 | | `THBD` | **+5.78** | Top upregulated gene. Induces pro-inflammatory, pro-coagulant tumor microenvironment. |
-| **3. Clinical Correlation** <br> *Cardiotoxicity Signature* | `Dilated Cardiomyopathy` Pathway | **↓ Down** | Transcriptomic signature aligns with known cardiac adverse events of Osimertinib. |
-The full differential expression results are available in 3_results/DGE_results_limma.csv.
+| **3. 3. Potential Clinical Relevance** <br> *Cardiotoxicity Signature* | `Dilated Cardiomyopathy` Pathway | **↓ Down** | Transcriptomic signature aligns with known cardiac adverse events of Osimertinib. |
+The full differential expression results are available in 3_results/DGE_results_limma_voom.csv.
+
 ## Independent Validation of Published Mechanisms
 
-This work supports the KRT-driven immune dysfunction model of osimertinib resistance of **Shi et al. 2025** [*Discov Oncol*, PMID: 40796706](https://pubmed.ncbi.nlm.nih.gov/40796706/), confirming the role of KRT-family genes and T-cell suppression in osimertinib resistance. 
+This work supports the KRT-driven immune dysfunction model of osimertinib resistance reported by Shi et al. 2025 (Discov Oncol, PMID: 40796706)(https://pubmed.ncbi.nlm.nih.gov/40796706/), confirming the role of KRT-family genes and T-cell suppression in osimertinib resistance. 
 The analysis further extends these findings by identifying a transcriptomic signature consistent with cardiotoxicity, providing a potential mechanistic link between the resistance phenotype and clinical adverse events.
 
-**Conclusion:** This work independently validates the KRT-driven immune dysfunction model of osimertinib resistance and provides a potential mechanistic link to its clinical cardiotoxicity profile.
+**Conclusion:** 
+This work supports the KRT-driven immune dysfunction model of osimertinib resistance and suggests a potential mechanistic link to its clinical cardiotoxicity profile.
 
 
 ## Data Availability
 
 - **Raw RNA-seq Data:** NCBI Gene Expression Omnibus (GEO) under accession number [GSE222820](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE222820)
-- **Processed Data:** All intermediate and final processed files (counts, DEG lists, enrichment results) are available in the `1_data/` and `results/tables/` directories of this repository.
+- **Processed Data:** All intermediate and final processed files (counts, DEG lists, enrichment results) are available in the `1_data/` and `3_results/` directories of this repository.
 - **Analysis Workflow:** The complete Galaxy workflow is available in `2_workflow/galaxy-workflow.ga`.
 
   
