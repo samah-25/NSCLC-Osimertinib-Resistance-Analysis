@@ -24,8 +24,9 @@ This repository contains the full workflow from raw FASTQ to pathway-level insig
 ```
 📁 NSCLC-Osimertinib-Resistance-Analysis/
 ├── 📁 1_data/
-│   ├── counts_matrix.csv          # Raw gene counts from featureCounts
-│   └── metadata.csv               # Sample info: control vs resistant
+│   ├── SRR_Acc_List.txt       
+|   ├── raw_counts_matrix.csv
+│   └── sample_metadata.csv               
 ├── 📁 2_workflow/
 │   └── galaxy-workflow.ga         # Import this to Galaxy to reproduce
 ├── 📁 3_results/                           # Final figures and pathway analysis
