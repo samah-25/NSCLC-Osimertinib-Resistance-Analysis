@@ -63,7 +63,10 @@ supporting a dual-escape model of resistance.
 | **2. Immune Reprogramming** <br> *T-cell Dysfunction* | `IL7` | **-3.67** | Loss of critical T-cell survival cytokine, consistent with reduced CD8+ T-cell activity. |
 | | `HLA-A` | **+3.49** | Paradoxical MHC-I upregulation. KEGG: "Antigen Processing and Presentation" (Score=93.86). |
 | | `THBD` | **+5.78** | Top upregulated gene. Induces pro-inflammatory, pro-coagulant tumor microenvironment. |
-| **3. 3. Potential Clinical Relevance** <br> *Cardiotoxicity Signature* | `Dilated Cardiomyopathy` Pathway | **↓ Down** | Transcriptomic signature aligns with known cardiac adverse events of Osimertinib. |
+|  **3. Clinical Relevance** <br> *Cardiotoxicity Signature* | **Cardiac muscle contraction pathway** <br> CACNA2D1 | -5.16 | Severe suppression of L-type calcium channel components indicates blocked cardiac excitation-contraction coupling, providing a molecular basis for Osimertinib's clinical cardiotoxicity. |
+|  | CACNA1S | -3.22 |  |
+|  | CHRNA1 | -4.22 |  |
+
 The full differential expression results are available in 3_results/DGE_results_limma_voom.csv.
 
 ## Independent Validation of Published Mechanisms
