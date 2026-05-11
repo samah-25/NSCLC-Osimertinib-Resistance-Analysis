@@ -10,8 +10,8 @@ Analysis of GSE222820 identified **279 high-confidence differentially expressed 
 
 2.  **Immune Microenvironment Reprogramming:** Establishment of a pro-inflammatory state via `THBD` (+5.78) and `CASP1` (+4.60) upregulation, combined with loss of T-cell homeostatic signals `IL7` (-3.67). This is accompanied by a paradoxical upregulation of MHC-I components such as HLA-A (+3.49), suggesting altered antigen presentation despite T-cell suppression.
 
-3.  **Potential Clinical Relevance:** Downregulation of the "Dilated Cardiomyopathy" pathway, providing a transcriptomic signature that aligns with the known cardiac adverse events associated with Osimertinib.
-This model independently validates the KRT-driven immune dysfunction mechanism reported by Shi et al. 2025 [[PMID: 40796706](https://pubmed.ncbi.nlm.nih.gov/40796706/)] and extends it by linking resistance to a cardiotoxicity signature.
+3.  **Potential Clinical Relevance:** `Downregulation of the 'Cardiac muscle contraction' pathway, marked by severe suppression of calcium handling genes CACNA2D1 (-5.16 log2FC, 36-fold decrease), CHRNA1 (-4.22), and CACNA1S (-3.22), indicates blocked cardiac contraction and provides a molecular basis for Osimertinib's cardiotoxicity.
+This model independently supports the KRT-driven immune dysfunction mechanism reported by Shi et al. 2025 [[PMID: 40796706](https://pubmed.ncbi.nlm.nih.gov/40796706/)] and extends it by linking resistance to a cardiotoxicity signature.
 
 ## Project Overview
 This project investigates how Osimertinib affects gene expression in NSCLC using the PC9 cell line.
@@ -28,11 +28,13 @@ This repository contains the full workflow from raw FASTQ to pathway-level insig
 │   └── metadata.csv               # Sample info: control vs resistant
 ├── 📁 2_workflow/
 │   └── galaxy-workflow.ga         # Import this to Galaxy to reproduce
-├── 📁 3_results/
-|   ├── DGE_results_limma_voom.csv
-│   ├── volcano_plot.png           # Main DGE visualization
-│   ├── pathway_enrichment.png     # g:Profiler results
-│   └── KRT17_boxplot.png          # Expression of key gene
+├── 📁 3_results/                           # Final figures and pathway analysis
+│   ├── DGE_results_limma_voom.csv       # Full DEGs table: 279 genes, padj<0.05, |log2FC|>2
+│   ├── GO_Cellular_Component_up.png     # GO:CC enrichment for 221 upregulated genes
+│   ├── KEGG_Down_OR_vs_Sensitive.png    # Fig 3B: KEGG pathways for 58 downregulated genes  
+│   ├── KEGG_Up_OR_vs_Sensitive.png      # Fig 3A: KEGG pathways for 221 upregulated genes
+│   ├── mdplot_Treated-Control.png       # SuppFig S1: MD plot for QC of DE analysis
+│   └── volcano_plot.png                 # Fig 1: Main DGE visualization, PC9-OR vs Parental
 └── README.md                      # You are here
 ```
 ## Analytical Workflow (Galaxy Pipeline)
